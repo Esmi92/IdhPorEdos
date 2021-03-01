@@ -1,0 +1,56 @@
+$primary : #bcd4e6;
+
+body{
+    height: 100%;
+    background-color: #edf6f9;
+}
+
+h1,h2{
+    display: flex;
+    justify-content: center;
+    padding: 2px;
+    background-color: $primary;
+    border-radius: 15px;
+}
+
+h4{
+    display: flex;
+    justify-content: center;
+    padding: 2px;
+}
+
+.grid{
+    display: flex;
+    justify-content: center;
+}
+
+.mobileGrid{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.select:focus,.mobileSelect:focus{
+ outline: none;
+}
+
+.select{
+    border: none;
+    width: 50%;
+    height: 25px;
+    font-size: medium;
+    border-bottom: black solid;
+}
+
+.mobileSelect{
+    border: none;
+    width: 75%;
+    height: 25px;
+    font-size: medium;
+    border-bottom: black solid;
+    margin-bottom: 10px;
+}
+
+.button{
+    width: 150px;
+}
