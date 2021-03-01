@@ -6,4 +6,4 @@ Link: https://app.netlify.com/sites/idh/settings/general
 
 Se realizaron pruebas end to end de las vistas para desktop y móvil con Cypress: 
 
-![alt text](https://github.com/Esmi92/IdhPorEdos/master/Test \completo \escritorio.png?raw=true)
+[![Test-completo-escritorio.png](https://i.postimg.cc/2yYmT9Mk/Test-completo-escritorio.png)](https://postimg.cc/FdT2Hph8)
