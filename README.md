@@ -2,7 +2,7 @@
 
 Este proyecto fue creado con React, utilizando Chart Js y Material UI. 
 
-Link: https://app.netlify.com/sites/idh/settings/general
+Link: https://idh.netlify.app/
 
 Se realizaron pruebas end to end de las vistas para desktop y móvil con Cypress: 
 
