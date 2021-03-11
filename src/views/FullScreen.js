@@ -27,6 +27,8 @@ function FullScreen() {
                 setIdhSelected(edo.idh)
             }
         })
+
+
     }, [context.state])
 
 
@@ -43,8 +45,7 @@ function FullScreen() {
                             {context.year === '' ?
                                 <select name="year" id="year" className="select"
                                     onChange={(event) => {
-                                        context.setYear(event.target.value)
-                                        context.changeYear()
+                                        context.changeYear(event.target.value)
                                     }}
                                 >
                                     <option value="" selected disabled>Año</option>
@@ -54,8 +55,7 @@ function FullScreen() {
                                 </select> :
                                 <select name="year" id="year" className="select"
                                     onChange={(event) => {
-                                        context.setYear(event.target.value)
-                                        context.changeYear()
+                                        context.changeYear(event.target.value)
                                     }}
                                 >
                                     <option value="" selected disabled>{context.year}</option>

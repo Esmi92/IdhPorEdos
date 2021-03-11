@@ -43,8 +43,7 @@ function Mobile() {
                             {context.year === '' ?
                                 <select name="year" id="year" className="mobileSelect"
                                     onChange={(event) => {
-                                        context.setYear(event.target.value)
-                                        context.changeYear()
+                                        context.changeYear(event.target.value)
                                     }}
                                 >
                                     <option value="" selected disabled>Año</option>
@@ -54,8 +53,7 @@ function Mobile() {
                                 </select> :
                                 <select name="year" id="year" className="mobileSelect"
                                     onChange={(event) => {
-                                        context.setYear(event.target.value)
-                                        context.changeYear()
+                                        context.changeYear(event.target.value)
                                     }}
                                 >
                                     <option value="" selected disabled>{context.year}</option>
