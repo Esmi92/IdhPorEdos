@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import estados from './utils/estados'
 import mergeArray from './utils/mergeArray'
+import generateIdh from './utils/generateIdh'
 
 const IdhContext = React.createContext()
 
@@ -11,47 +12,42 @@ function IdhProvider(props) {
     const [order, setOrder] = useState('')
     const [year, setYear] = useState('')
     const [state, setState] = useState('')
+    const [allData,setAllData] = useState([])
+
+    const changeYear =  (_year)=>{
+            
+        const state =  estados().map((edo) => {
+            return edo.nombre
+        })
+        const code =  estados().map((edo) => {
+            return edo.clave
+        })
+
+        const yearIdhFilter =  allData.filter((y)=>{
+            return _year == y.year
+        }).map((ye)=>{
+            return ye.idhPerYear
+        })
+
+        console.log(allData)
+
+    const infoNew = mergeArray(state, yearIdhFilter[0],code)
+
+    setNewArray(infoNew)
+    setYear(_year)
+
+}
 
     useEffect(() => {
         const colors = estados().map((edo) => {
             return edo.color
         })
         setArrayColors(colors)
+        setAllData(generateIdh())
 
-        const states = estados().map((edo) => {
-            return edo.nombre
-        })
-        const code = estados().map((edo) => {
-            return edo.clave
-        })
-        const idh = []
-        for (let i = 0; i <= 31; i++) {
-            const idhRandom = Math.random() * 1
-            idh.push(idhRandom)
-        }
-        const info = mergeArray(states, idh, code) 
-
-        setNewArray(info)
-    
     } , [])
 
-    const changeYear = ()=>{
-        const statesNew = estados().map((edo) => {
-            return edo.nombre
-        })
-        const codeNew = estados().map((edo) => {
-            return edo.clave
-        })
-        const idhNew = []
-        for (let i = 0; i <= 31; i++) {
-            const idhRandom = Math.random() * 1
-            idhNew.push(idhRandom)
-        }
-        const infoNew = mergeArray(statesNew, idhNew,codeNew)
-
-        setNewArray(infoNew)
-
-    }
+    
     
 
     const value = {
@@ -61,10 +57,10 @@ function IdhProvider(props) {
         order,
         setOrder,
         year,
-        setYear,
         state,
         setState,
-        changeYear
+        changeYear,
+        allData
 
     }
 
